@@ -1,0 +1,47 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-input/paper-input.html">
+
+<dom-module id="productsearch-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <paper-input label="Buscar producto" value="{{searchArgument}}"></paper-input>
+  </template>
+
+  <script>
+    /**
+     * `productsearch-element`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class ProductsearchElement extends Polymer.Element {
+      static get is() { return 'productsearch-element'; }
+      static get properties() {
+        return {
+          searchArgument:{
+             type:String,
+             value:"",
+             observer:"valueChanged"
+          }
+        };
+      }
+
+      valueChanged(){
+        this.dispatchEvent(new CustomEvent("search-product",{
+          bubbles:false,
+          composed:false,
+          detail:this.searchArgument
+        }))
+      }
+
+    }
+
+    window.customElements.define(ProductsearchElement.is, ProductsearchElement);
+  </script>
+</dom-module>
