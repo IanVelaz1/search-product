@@ -1,6 +1,21 @@
 # \<productsearch-element\>
 
+## Install bower
+```
+$ npm i bower
+```
 
+## run bower install
+```
+$ npm i bower
+```
+
+## variables in search-product
+```
+searchArgument:String //determines the argument on wich upon the list elements will be filtered
+language:Object //determines the language of the label
+
+```
 
 ## Install the Polymer-CLI
 
