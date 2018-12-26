@@ -8,7 +8,7 @@
         display: block;
       }
     </style>
-    <paper-input label="Buscar producto" value="{{searchArgument}}"></paper-input>
+    <paper-input label="[[language.labelSearch]]" value="{{searchArgument}}"></paper-input>
   </template>
 
   <script>
@@ -28,6 +28,9 @@
              type:String,
              value:"",
              observer:"valueChanged"
+          },
+          language:{
+
           }
         };
       }
